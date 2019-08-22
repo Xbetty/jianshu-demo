@@ -49,15 +49,30 @@ export const NavItem = styled.div `
 export const SearchWrapper = styled.div`
     position: relative;
     float: left;
+    // input的动画
+    .slide-enter {
+        width: 160px;
+        transition: all .2s ease-out;
+    }
+    .slide-enter-active {
+        width: 240px;
+    }
+    .slide-exit {
+        width: 160px;
+        transition: all .2s ease-out;
+    }
     .iconfont {
         position: absolute;
         right: 5px;
         bottom: 5px;
         width: 30px;
         border-radius: 15px;
-        background-color: green;
         text-align: center;
         line-height: 30px;
+        &.focused {
+            background-color: #777;
+            color: #fff;
+        }
     }
 `
 
@@ -73,12 +88,17 @@ export const NavSearch = styled.input.attrs({
     background: #eee;
     margin-top: 9px;
     margin-left: 20px;
-    padding: 0 20px;
+    padding: 0 40px 0 20px;
     box-sizing: border-box;
     font-size: 14px;
+    color: #666;
     // 修改placeholder的字体颜色
     &::placeholder {
         color: #999;
+    }
+    &.focused {
+        box-sizing: content-box;
+        width: 240px;
     }
 `
 
