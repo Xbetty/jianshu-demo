@@ -49,18 +49,6 @@ export const NavItem = styled.div `
 export const SearchWrapper = styled.div`
     position: relative;
     float: left;
-    // input的动画
-    .slide-enter {
-        width: 160px;
-        transition: all .2s ease-out;
-    }
-    .slide-enter-active {
-        width: 240px;
-    }
-    .slide-exit {
-        width: 160px;
-        transition: all .2s ease-out;
-    }
     .iconfont {
         position: absolute;
         right: 5px;
@@ -99,6 +87,20 @@ export const NavSearch = styled.input.attrs({
     &.focused {
         box-sizing: content-box;
         width: 240px;
+    }
+
+    // input的动画
+    &.slide-enter {
+        transition: all .2s ease-out;
+    }
+    &.slide-enter-active {
+        width: 240px;
+    }
+    &.slide-exit {
+        transition: all .2s ease-out;
+    }
+    &.slide-exit-active {
+        width: 160px;
     }
 `
 
