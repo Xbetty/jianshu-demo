@@ -1,16 +1,10 @@
-const defaultState = {
-    focused: false
-};
+import { combineReducers } from 'redux';
+// ES6语法 为防止重名，给reducer起别名headerReducer
+import { reducer as headerReducer } from '../common/header/store';
 
-export default (state=defaultState, action) => {
-    const newState = JSON.parse(JSON.stringify(state));
-    if (action.type === 'search_focus') {
-        newState.focused = action.focused;
-        return newState
-    }
-    if (action.type === 'serach_blur') {
-        newState.focused = action.focused;
-        return newState
-    }
-    return state
-}
+
+const reducer = combineReducers({
+    header: headerReducer
+});
+
+export default reducer;
