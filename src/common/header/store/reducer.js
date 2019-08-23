@@ -1,14 +1,16 @@
+import * as constants from './constants';
+
 const defaultState = {
     focused: false
 };
 
 export default (state=defaultState, action) => {
     const newState = JSON.parse(JSON.stringify(state));
-    if (action.type === 'search_focus') {
+    if (action.type === constants.SEARCH_FOCUS) {
         newState.focused = action.focused;
         return newState
     }
-    if (action.type === 'serach_blur') {
+    if (action.type === constants.SEARCH_BLUR) {
         newState.focused = action.focused;
         return newState
     }
