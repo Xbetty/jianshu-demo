@@ -9,6 +9,7 @@ import {
     NavItem,
     SearchWrapper,
     NavSearch,
+    SearchInfo,
     Addition,
     Button
 } from './style'
@@ -37,6 +38,7 @@ const Header = (props) => {
                             ></NavSearch>
                         </CSSTransition>                            
                         <span  className={props.focused ? 'focused iconfont' : 'iconfont'}>&#xe62b;</span>
+                        <SearchInfo></SearchInfo>
                     </SearchWrapper>
                     <NavItem className="right">登录</NavItem>
                     <NavItem className="right">
